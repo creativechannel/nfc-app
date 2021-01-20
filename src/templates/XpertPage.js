@@ -10,41 +10,21 @@ export const query = graphql`
     query (
         $slug: String!
     ){
-        markdownRemark (
-            fields: {
-                slug: {
-                    eq: $slug
+        wpMarket(id: {eq: $slug}) {
+            id
+            first_name
+            last_name
+            email
+            phone
+            job_title
+            brands {
+                nodes {
+                    name
                 }
             }
-        ) {
-            frontmatter {
-                title
-                firstName
-                lastName
-                email
-                phone
-                brandName
-                brandClass
-                ad {
-                    childImageSharp{
-                        fluid {
-                            src
-                        }
-                    }
-                }
-                logo {
-                    childImageSharp{
-                        original {
-                            src
-                        }
-                    }
-                }
-                user_pic {
-                    childImageSharp {
-                        resize(width:160){
-                            src
-                        }
-                    }
+            featuredImage {
+                node {
+                    sourceUrl
                 }
             }
         }
@@ -53,7 +33,7 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout mdData={data.markdownRemark}>
+    <Layout wpData={data.wpMarket}>
       <Row
         className={`xpert-row justify-content-center align-items-center`}>
         <Col xs={12} sm={5} className={"user-info-block d-flex align-items-center justify-content-center"}>
@@ -61,11 +41,11 @@ const IndexPage = ({ data }) => {
         </Col>
         <Col xs={12} sm={7} className={"p-0 w-100 d-flex align-items-center justify-content-center overflow-hidden promotion-block"}>
           <a href={"#"} className={"w-100"}>
-            <img
-              src={data.markdownRemark.frontmatter.ad.childImageSharp.fluid.src}
-              alt={data.markdownRemark.frontmatter.ad.name}
-              className={"img-fluid w-100"}
-            />
+            {/*<img*/}
+            {/*  src={data.markdownRemark.frontmatter.ad.childImageSharp.fluid.src}*/}
+            {/*  alt={data.markdownRemark.frontmatter.ad.name}*/}
+            {/*  className={"img-fluid w-100"}*/}
+            {/*/>*/}
           </a>
         </Col>
       </Row>

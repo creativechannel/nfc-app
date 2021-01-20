@@ -11,18 +11,6 @@ const IndexPage = () => {
                   title
               }
           }
-          allMarkdownRemark {
-              edges {
-                  node {
-                      frontmatter{
-                          brandName
-                      }
-                      fields {
-                          slug
-                      }
-                  }
-              }
-          }
       }
   `)
   return (

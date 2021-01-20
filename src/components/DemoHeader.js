@@ -6,15 +6,15 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 const DemoHeader = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
       query {
-          allMarkdownRemark {
+          allWpMarket {
               edges {
                   node {
-                      frontmatter{
-                          brandName
+                      brands {
+                          nodes {
+                              name
+                          }
                       }
-                      fields {
-                          slug
-                      }
+                      id
                   }
               }
           }
@@ -24,10 +24,10 @@ const DemoHeader = ({ siteTitle }) => {
     <Navbar bg={"light"} expand={"lg"}>
       <Navbar.Brand href={"/"}>{siteTitle}</Navbar.Brand>
       <Nav className={"ml-auto"}>
-        {data.allMarkdownRemark.edges.map((edge, index) => {
+        {data.allWpMarket.edges.map((edge, index) => {
           const node = edge.node
           return (
-            <Nav.Link as={Link} key={index} to={`/market/${node.fields.slug}`}>{node.frontmatter.brandName}</Nav.Link>
+            <Nav.Link as={Link} key={index} to={`/market/${node.id}`}>{node.brands.nodes[0].name}</Nav.Link>
           )
         })}
       </Nav>

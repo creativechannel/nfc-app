@@ -2,17 +2,17 @@ const path = require("path")
 const VCard = require("vcard-creator").default
 const fs = require("fs")
 
-module.exports.onCreateNode = ({ node, actions }) => {
-  const { createNodeField } = actions
-  if (node.internal.type === "MarkdownRemark") {
-    const slug = path.basename(node.fileAbsolutePath, ".md")
-    createNodeField({
-      node,
-      name: "slug",
-      value: slug
-    })
-  }
-}
+// module.exports.onCreateNode = ({ node, actions }) => {
+//   const { createNodeField } = actions
+//   if (node.internal.type === "MarkdownRemark") {
+//     const slug = path.basename(node.fileAbsolutePath, ".md")
+//     createNodeField({
+//       node,
+//       name: "slug",
+//       value: slug
+//     })
+//   }
+// }
 
 
 module.exports.createPages = async ({ graphql, actions }) => {
@@ -20,32 +20,22 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const contactBlockTemplate = path.resolve("./src/templates/XpertPage.js")
   const response = await graphql(`
     query {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-             }
-             frontmatter {
-                title
-                firstName
-                lastName
-                email
-                phone
-                brandClass
-             }
-          }
+    allWpMarket {
+      edges {
+        node {
+          id
         }
       }
     }
+  }
   `)
 
-  response.data.allMarkdownRemark.edges.forEach((edge) => {
+  response.data.allWpMarket.edges.forEach((edge) => {
     createPage({
       component: contactBlockTemplate,
-      path: `/market/${edge.node.fields.slug}`,
+      path: `/market/${edge.node.id}`,
       context: {
-        slug: edge.node.fields.slug
+        slug: edge.node.id
       }
     })
     // const contact = edge.node.frontmatter
