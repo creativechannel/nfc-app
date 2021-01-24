@@ -13,7 +13,7 @@ import Header from "./header"
 import "./main.scss"
 import DemoHeader from "./DemoHeader"
 
-const Layout = ({ children, wpData }) => {
+const Layout = ({ children, nodeData }) => {
   const data = useStaticQuery(graphql`
       query {
           site {
@@ -26,8 +26,8 @@ const Layout = ({ children, wpData }) => {
   return (
     <>
       <DemoHeader siteTitle={data.site.siteMetadata?.title || `Title`}/>
-      <Header data={wpData.brands}/>
-      <Container fluid={true} className={wpData.brands.nodes[0].name}>{children}</Container>
+      <Header data={nodeData.relationships.field_brand}/>
+      <Container fluid={true} className={nodeData.relationships.field_brand.field_class}>{children}</Container>
     </>
   )
 }

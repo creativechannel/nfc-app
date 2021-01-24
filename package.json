@@ -20,6 +20,7 @@
     "gatsby-plugin-sharp": "^2.10.0",
     "gatsby-remark-images": "^3.7.0",
     "gatsby-remark-relative-images": "^2.0.2",
+    "gatsby-source-drupal": "^3.12.0",
     "gatsby-source-filesystem": "^2.6.1",
     "gatsby-source-wordpress-experimental": "^6.2.0",
     "gatsby-transformer-remark": "^2.11.1",

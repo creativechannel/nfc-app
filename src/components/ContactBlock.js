@@ -6,14 +6,14 @@ import { Button } from "react-bootstrap"
 
 
 const ContactBlock = ({ data }) => {
-  const xpert = data.wpMarket
-  const vcardFileName = `${xpert.first_name}_${xpert.last_name}_${xpert.brands.nodes[0].name}`.toLowerCase()
+  const xpert = data.nodeMarket
+  const vcardFileName = `${xpert.field_first_name}_${xpert.field_last_name}_${xpert.relationships.field_brand.field_class}`.toLowerCase()
   return (
     <div className={"d-flex justify-content-center user-info align-items-center"}>
 
       <div className={"user-picture"}>
-        {xpert.featuredImage.node.sourceUrl ?
-          <img src={xpert.featuredImage.node.sourceUrl} alt={`${xpert.first_name} ${xpert.last_name}`}
+        {xpert.relationships.field_profile_picture.localFile.publicURL ?
+          <img src={xpert.relationships.field_profile_picture.localFile.publicURL} alt={`${xpert.first_name} ${xpert.last_name}`}
                className={"user-icon"}/>
           :
           <div className={"user-icon d-flex justify-content-center align-items-center"}>
@@ -30,16 +30,16 @@ const ContactBlock = ({ data }) => {
         </div>
         <div>
           <div className={"name"}>
-            {`${xpert.first_name} ${xpert.last_name}`}
+            {`${xpert.field_first_name} ${xpert.field_last_name}`}
           </div>
         </div>
         <div className={"d-flex flex-row align-items-baseline"}>
           <div className={"w-25 email-label label"}>Email:</div>
-          <div className={"w-75 email"}><a href={`mailto:${xpert.email}`}>{`${xpert.email}`}</a></div>
+          <div className={"w-75 email"}><a href={`mailto:${xpert.field_email}`}>{`${xpert.field_email}`}</a></div>
         </div>
         <div className={"d-flex flex-row align-items-baseline"}>
           <div className={"w-25 phone-label label"}>Phone:</div>
-          <div className={"w-75 phone"}><a href={`tel:${xpert.phone}`}>{`${xpert.phone}`}</a></div>
+          <div className={"w-75 phone"}><a href={`tel:${xpert.field_phone}`}>{`${xpert.field_phone}`}</a></div>
         </div>
         <Link to={`/vcards/${vcardFileName}.vcard`}>
           <Button variant="primary" size={"lg"} className={"mt-3"} block>Download vCard</Button></Link>

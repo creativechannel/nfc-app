@@ -20,17 +20,27 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const contactBlockTemplate = path.resolve("./src/templates/XpertPage.js")
   const response = await graphql(`
     query {
-    allWpMarket {
-      edges {
-        node {
-          id
+      allNodeMarket {
+        edges {
+          node {
+            id
+            field_first_name
+            field_last_name
+            field_email
+            field_phone
+            field_job_title
+            relationships {
+              field_brand {
+                field_class
+              }
+            }
+          }
         }
       }
     }
-  }
   `)
 
-  response.data.allWpMarket.edges.forEach((edge) => {
+  response.data.allNodeMarket.edges.forEach((edge) => {
     createPage({
       component: contactBlockTemplate,
       path: `/market/${edge.node.id}`,
@@ -38,14 +48,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
         slug: edge.node.id
       }
     })
-    // const contact = edge.node.frontmatter
+    // const contact = edge.node
     // const xpertCard = new VCard()
-    // xpertCard.addName(lastname = contact.lastName, firstname = contact.firstName, additional = contact.title)
-    // xpertCard.addEmail(contact.email)
-    // xpertCard.addPhoneNumber(contact.phone)
+    // xpertCard.addName(lastname = contact.field_last_name, firstname = contact.field_first_name, additional = contact.field_job_title)
+    // xpertCard.addEmail(contact.field_email)
+    // xpertCard.addPhoneNumber(contact.field_phone)
     //
     // console.log(xpertCard.toString())
-    // const fileName = `${contact.firstName}_${contact.lastName}_${contact.brandClass}`.toLowerCase()
-    // fs.writeFile(`./src/markets/vcards/${fileName}.vcard`, xpertCard.toString(), () =>{})
+    // const fileName = `${contact.field_first_name}_${contact.field_last_name}_${contact.relationships.field_brand.field_class}`.toLowerCase()
+    // fs.writeFile(`./src/markets/vcards/${fileName}.vcard`, xpertCard.toString(), () => {
+    // })
   })
 }
