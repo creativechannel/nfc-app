@@ -62,11 +62,6 @@ module.exports = {
       resolve: `gatsby-source-drupal`,
       options: {
         baseUrl: `http://drupal-dev.eba-fkhp4mkr.us-east-1.elasticbeanstalk.com/`,
-        // apiBase: `jsonapi`, // optional, defaults to `jsonapi`
-        // basicAuth: {
-        //   username: 'mmorales',
-        //   password: 'cEbhy2-rivqom-qiwrej',
-        // }
       },
     }
   ]

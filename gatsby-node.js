@@ -56,7 +56,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     //
     // console.log(xpertCard.toString())
     // const fileName = `${contact.field_first_name}_${contact.field_last_name}_${contact.relationships.field_brand.field_class}`.toLowerCase()
-    // fs.writeFile(`./src/markets/vcards/${fileName}.vcard`, xpertCard.toString(), () => {
+    // fs.writeFile(`./static/vcards/${fileName}.vcard`, xpertCard.toString(), () => {
     // })
   })
 }

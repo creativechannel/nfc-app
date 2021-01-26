@@ -1,8 +1,0 @@
-BEGIN:VCARD
-VERSION:3.0
-REV:2020-12-02T23:28:53.247Z
-N;CHARSET=utf-8:Robot;Jane;Retail Xpert;;
-FN;CHARSET=utf-8:Jane Retail Xpert Robot
-EMAIL;INTERNET:janedoe@irobot.com
-TEL:555-55551
-END:VCARD
