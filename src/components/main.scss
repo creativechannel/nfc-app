@@ -1,0 +1,108 @@
+@import "~bootstrap/scss/bootstrap";
+
+$brand-color-lg: #A50034;
+$brand-color-irobot: #49aa00;
+
+.lgretail {
+  .btn-primary {
+    @include button-variant($brand-color-lg, darken($brand-color-lg, 7.5%), darken($brand-color-lg, 10%), lighten($brand-color-lg, 5%), lighten($brand-color-lg, 10%), darken($brand-color-lg, 30%));
+  }
+
+  .btn-outline-primary {
+    @include button-outline-variant($brand-color-lg, #222222, lighten($brand-color-lg, 5%), $brand-color-lg);
+  }
+}
+
+.irobot {
+  .btn-primary {
+    @include button-variant($brand-color-irobot, darken($brand-color-irobot, 7.5%), darken($brand-color-irobot, 10%), lighten($brand-color-irobot, 5%), lighten($brand-color-irobot, 10%), darken($brand-color-irobot, 30%));
+  }
+
+  .btn-outline-primary {
+    @include button-outline-variant($brand-color-irobot, #222222, lighten($brand-color-irobot, 5%), $brand-color-irobot);
+  }
+}
+
+.navbar {
+  border-bottom: 5px solid rgb(0, 137, 196);
+
+  &.lgretail {
+    border-bottom: 5px solid $brand-color-lg;
+  }
+
+  &.irobot {
+    border-bottom: 5px solid $brand-color-irobot;
+  }
+}
+
+.xpert-row {
+  border-bottom: 1px solid #c3c3c3;
+}
+
+.user-info-block {
+  background-color: #F3F4F6;
+  height: 470px;
+
+  a {
+    text-decoration: none;
+  }
+
+  .user-info {
+    flex-direction: column;
+    width: 100%;
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+      width: 75%;
+    }
+  }
+
+  .user-picture {
+
+  }
+
+  .user-icon {
+    background-color: #B1B1B1;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    margin-bottom: 15px;
+    @include media-breakpoint-up(sm) {
+      margin-right: 25px;
+      margin-bottom: auto;
+    }
+  }
+
+  .user-data {
+    color: #707070;
+
+    .title {
+      font-size: 14px;
+    }
+
+    .name {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .label {
+      font-size: 14px;
+    }
+
+    .email, .phone {
+      font-size: 20px;
+    }
+  }
+}
+
+.promotion-block {
+  @include media-breakpoint-up(sm) {
+    height: 470px;
+  }
+}
+
+.subscribe-block {
+  height: 470px;
+  @include media-breakpoint-up(sm) {
+    max-width: 60%;
+  }
+}
