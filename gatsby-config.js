@@ -1,3 +1,11 @@
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+console.log(`Using environment config: '${activeEnv}'`)
+require("dotenv").config({
+  path: `.env.${activeEnv}`
+})
+
+
 module.exports = {
   siteMetadata: {
     title: `CCS NFC Demo`,
@@ -61,8 +69,12 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `http://drupal-dev.eba-fkhp4mkr.us-east-1.elasticbeanstalk.com/`,
-      },
+        baseUrl: process.env.GATSBY_API_URL,
+        basicAuth: {
+          username: process.env.BASIC_AUTH_USERNAME,
+          password: process.env.BASIC_AUTH_PASSWORD
+        }
+      }
     }
   ]
 }
