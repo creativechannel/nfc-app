@@ -60,6 +60,14 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "nfc-xpert",
+        protocol: "https",
+        hostname: "contap.co"
+      }
+    },
+    {
       resolve: `gatsby-source-drupal`,
       options: {
         baseUrl: process.env.GATSBY_API_URL,
