@@ -60,12 +60,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        bucketName: "nfc-xpert"
-      }
-    },
-    {
       resolve: `gatsby-source-drupal`,
       options: {
         baseUrl: process.env.GATSBY_API_URL,
