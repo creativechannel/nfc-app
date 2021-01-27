@@ -15,7 +15,7 @@ const formatPhoneNumber = (phoneNumberString) => {
 
 const ContactBlock = ({ data }) => {
   const xpert = data.nodeMarket
-  const vcardFileName = `${xpert.field_first_name}_${xpert.field_last_name}_${xpert.relationships.field_brand.field_class}`.toLowerCase()
+  const vcardFileName = `${xpert.field_first_name}_${xpert.field_last_name}_${xpert.id}`.toLowerCase()
   const phone =  formatPhoneNumber(xpert.field_phone)
   return (
     <div className={"d-flex justify-content-center user-info align-items-center"}>

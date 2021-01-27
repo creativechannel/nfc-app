@@ -1,16 +1,18 @@
 import React from "react"
-import { Row, Col, Form, Button } from "react-bootstrap"
+import { Row, Col } from "react-bootstrap"
 
 import Layout from "../components/layout"
 
 import ContactBlock from "../components/ContactBlock"
 import { graphql } from "gatsby"
+// import SubscribeBlock from "../components/SubscribeBlock"
 
 export const query = graphql`
     query (
         $slug: String!
     ){
         nodeMarket(id: {eq: $slug}) {
+            id
             field_first_name
             field_last_name
             field_email
@@ -71,34 +73,7 @@ const IndexPage = ({ data }) => {
       </Row>
       {/*<Row className={"d-flex justify-content-center"}>*/}
       {/*  <Col className={"subscribe-block"}>*/}
-      {/*    <div className={"h-100 justify-content-center d-flex flex-column"}>*/}
-      {/*      <h2>Subscribe for a chance to win</h2>*/}
-      {/*      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>*/}
-      {/*      <Form>*/}
-      {/*        <Row>*/}
-      {/*          <Col>*/}
-      {/*            <Form.Group controlId="formGroupFirstName">*/}
-      {/*              <Form.Control type="text" placeholder="First Name"/>*/}
-      {/*            </Form.Group>*/}
-      {/*          </Col>*/}
-      {/*          <Col>*/}
-      {/*            <Form.Group controlId="formGroupLastName">*/}
-      {/*              <Form.Control type="text" placeholder="Last Name"/>*/}
-      {/*            </Form.Group>*/}
-      {/*          </Col>*/}
-      {/*        </Row>*/}
-      {/*        <Row>*/}
-      {/*          <Col>*/}
-      {/*            <Form.Group controlId="formGroupEmail">*/}
-      {/*              <Form.Control type="email" placeholder="Email Address"/>*/}
-      {/*            </Form.Group>*/}
-      {/*            <Button variant="primary" type="submit" block size={"lg"}>*/}
-      {/*              Subscribe*/}
-      {/*            </Button>*/}
-      {/*          </Col>*/}
-      {/*        </Row>*/}
-      {/*      </Form>*/}
-      {/*    </div>*/}
+      {/*    <SubscribeBlock/>*/}
       {/*  </Col>*/}
       {/*</Row>*/}
     </Layout>

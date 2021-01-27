@@ -106,7 +106,6 @@ dist
 
 # TernJS port file
 .tern-port
-<<<<<<< HEAD
 
 # Mac files
 .DS_Store
@@ -121,3 +120,4 @@ yarn-error.log
 #Jetbrains Files
 .idea
 
+!/public/
