@@ -121,3 +121,5 @@ yarn-error.log
 .idea
 
 !/public/
+public/
+public/*
