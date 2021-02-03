@@ -16,7 +16,7 @@ const formatPhoneNumber = (phoneNumberString) => {
 const ContactBlock = ({ data }) => {
   const xpert = data.nodeMarket
   const vcardFileName = `${xpert.field_first_name}_${xpert.field_last_name}_${xpert.id}`.toLowerCase()
-  const phone =  formatPhoneNumber(xpert.field_phone)
+  const phone = formatPhoneNumber(xpert.field_phone)
   return (
     <div className={"d-flex justify-content-center user-info align-items-center"}>
 
@@ -51,6 +51,9 @@ const ContactBlock = ({ data }) => {
           <div className={"w-25 phone-label label"}>Phone:</div>
           <div className={"w-75 phone"}><a href={`tel:${phone}`}>{`${phone}`}</a></div>
         </div>
+        <a href={`sms:${phone}`}>
+          <Button variant="primary" size={"lg"} className={"mt-3"} block>SMS</Button>
+        </a>
         <Link to={`/vcards/${vcardFileName}.vcard`}>
           <Button variant="primary" size={"lg"} className={"mt-3"} block>Download vCard</Button></Link>
       </div>
