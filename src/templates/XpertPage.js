@@ -62,7 +62,7 @@ const IndexPage = ({ data }) => {
           <ContactBlock data={data}/>
         </Col>
         <Col xs={12} sm={7} className={"p-0 w-100 d-flex align-items-center justify-content-center overflow-hidden promotion-block"}>
-          <a href={"/"} className={"w-100"}>
+          <a href={"https://lgus.csod.com/client/lgus/default.aspx"} className={"w-100"}>
             <img
               src={promotion.relationships.field_image.localFile.publicURL}
               alt={promotion.title}
