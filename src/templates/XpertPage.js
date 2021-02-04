@@ -52,8 +52,9 @@ export const query = graphql`
 `
 
 const IndexPage = ({ data }) => {
-  const promotions =  data.nodeMarket.relationships.field_brand.relationships.node__promotion ?  data.nodeMarket.relationships.field_brand.relationships.node__promotion : [];
-  const promotion = promotions[Math.floor(Math.random() * promotions.length)];
+  localStorage.setItem("url", `/market/${data.nodeMarket.id}`)
+  const promotions = data.nodeMarket.relationships.field_brand.relationships.node__promotion ? data.nodeMarket.relationships.field_brand.relationships.node__promotion : []
+  const promotion = promotions[Math.floor(Math.random() * promotions.length)]
   return (
     <Layout nodeData={data.nodeMarket}>
       <Row
@@ -61,7 +62,8 @@ const IndexPage = ({ data }) => {
         <Col xs={12} sm={5} className={"user-info-block d-flex align-items-center justify-content-center"}>
           <ContactBlock data={data}/>
         </Col>
-        <Col xs={12} sm={7} className={"p-0 w-100 d-flex align-items-center justify-content-center overflow-hidden promotion-block"}>
+        <Col xs={12} sm={7}
+             className={"p-0 w-100 d-flex align-items-center justify-content-center overflow-hidden promotion-block"}>
           <a href={"https://lgus.csod.com/client/lgus/default.aspx"} className={"w-100"}>
             <img
               src={promotion.relationships.field_image.localFile.publicURL}

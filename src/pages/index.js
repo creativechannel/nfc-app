@@ -1,7 +1,13 @@
 import React from "react"
+import { navigate } from "gatsby"
 import "../components/main.scss"
 
 const IndexPage = () => {
+  const url = localStorage.getItem("url")
+  if (url) {
+    navigate("/market/084b039d-f502-5d17-bf73-2f11a5658a23")
+    return null
+  }
 
   return (
     <>
