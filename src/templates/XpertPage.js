@@ -52,7 +52,9 @@ export const query = graphql`
 `
 
 const IndexPage = ({ data }) => {
-  localStorage.setItem("url", `/market/${data.nodeMarket.id}`)
+  if (typeof window !== `undefined`) {
+    localStorage.setItem("url", `/market/${data.nodeMarket.id}`)
+  }
   const promotions = data.nodeMarket.relationships.field_brand.relationships.node__promotion ? data.nodeMarket.relationships.field_brand.relationships.node__promotion : []
   const promotion = promotions[Math.floor(Math.random() * promotions.length)]
   return (
