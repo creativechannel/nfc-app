@@ -7,8 +7,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `CCS NFC Demo`,
-    description: `This is a Retailer Xpert Contact Info Demo for Creative Channel Services`,
+    title: `Ask an Expert`,
+    description: `This is a Retailer Xpert Contact Info Demo from Creative Channel Services`,
     author: `Mario Morales`
   },
   plugins: [
@@ -24,8 +24,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "NFC App",
-        short_name: "NFC App",
+        name: "Ask an Expert",
+        short_name: "Ask an Expert",
         start_url: "/",
         background_color: "#6b37bf",
         theme_color: "#6b37bf",
@@ -34,7 +34,12 @@ module.exports = {
         crossOrigin: `use-credentials`
       }
     },
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/market/*`]
+      }
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -84,9 +89,9 @@ module.exports = {
         trackingIds: [
           process.env.GA_TRACKING_ID, // Google Analytics / GA
           process.env.AW_CONVERSION_ID, // Google Ads / Adwords / AW
-          process.env.DC_FLOODIGHT_ID, // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
-        ],
-      },
-    },
+          process.env.DC_FLOODIGHT_ID // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+        ]
+      }
+    }
   ]
 }
