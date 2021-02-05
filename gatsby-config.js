@@ -21,19 +21,17 @@ module.exports = {
       }
     },
     `gatsby-transformer-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: "Ask an Expert",
-    //     short_name: "Ask an Expert",
-    //     start_url: "/",
-    //     background_color: "#6b37bf",
-    //     theme_color: "#6b37bf",
-    //     display: "standalone",
-    //     icon: "src/images/icon.jpg",
-    //     crossOrigin: `use-credentials`
-    //   }
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Ask an Expert",
+        short_name: "Ask an Expert",
+        background_color: "#6b37bf",
+        theme_color: "#6b37bf",
+        display: "standalone",
+        icon: "src/images/icon.jpg",
+      }
+    },
     {
       resolve: `gatsby-plugin-offline`,
       options: {
