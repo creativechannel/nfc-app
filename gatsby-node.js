@@ -39,7 +39,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
     const xpertCard = new VCard()
     xpertCard.addName(lastname = contact.field_last_name, firstname = contact.field_first_name, additional = contact.field_job_title)
     xpertCard.addEmail(contact.field_email)
-    xpertCard.addPhoneNumber(contact.field_phone)
+    if (contact.field_phone) {
+      xpertCard.addPhoneNumber(contact.field_phone)
+    }
 
     // console.log(xpertCard.toString())
     const fileName = `${contact.field_first_name}_${contact.field_last_name}_${contact.id}`.toLowerCase()

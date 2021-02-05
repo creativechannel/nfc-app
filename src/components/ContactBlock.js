@@ -3,15 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "gatsby"
 import { Button } from "react-bootstrap"
-
-const formatPhoneNumber = (phoneNumberString) => {
-  const cleaned = ("" + phoneNumberString).replace(/\D/g, "")
-  const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
-  if (match) {
-    return "(" + match[1] + ") " + match[2] + "-" + match[3]
-  }
-  return null
-}
+import { formatPhoneNumber } from "../helpers/helpers"
 
 const ContactBlock = ({ data }) => {
   const xpert = data.nodeMarket
@@ -47,13 +39,17 @@ const ContactBlock = ({ data }) => {
           <div className={"w-25 email-label label"}>Email:</div>
           <div className={"w-75 email"}><a href={`mailto:${xpert.field_email}`}>{`${xpert.field_email}`}</a></div>
         </div>
-        <div className={"d-flex flex-row align-items-baseline"}>
-          <div className={"w-25 phone-label label"}>Phone:</div>
-          <div className={"w-75 phone"}><a href={`tel:${phone}`}>{`${phone}`}</a></div>
-        </div>
-        <a href={`sms:${phone}`}>
-          <Button variant="primary" size={"lg"} className={"mt-3"} block>SMS</Button>
-        </a>
+        {phone &&
+        <>
+          <div className={"d-flex flex-row align-items-baseline"}>
+            <div className={"w-25 phone-label label"}>Phone:</div>
+            <div className={"w-75 phone"}><a href={`tel:${phone}`}>{`${phone}`}</a></div>
+          </div>
+          <a href={`sms:${phone}`}>
+            <Button variant="primary" size={"lg"} className={"mt-3"} block>SMS</Button>
+          </a>
+        </>
+        }
         <Link to={`/vcards/${vcardFileName}.vcard`}>
           <Button variant="primary" size={"lg"} className={"mt-3"} block>Download vCard</Button></Link>
       </div>

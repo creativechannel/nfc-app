@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 
 import ContactBlock from "../components/ContactBlock"
 import { graphql } from "gatsby"
+import { cmsImageEncoder } from "../helpers/helpers"
 // import SubscribeBlock from "../components/SubscribeBlock"
 
 export const query = graphql`
@@ -57,6 +58,7 @@ const IndexPage = ({ data }) => {
   }
   const promotions = data.nodeMarket.relationships.field_brand.relationships.node__promotion ? data.nodeMarket.relationships.field_brand.relationships.node__promotion : []
   const promotion = promotions[Math.floor(Math.random() * promotions.length)]
+  const promotionImage = cmsImageEncoder(promotion.relationships.field_image.localFile.publicURL)
   return (
     <Layout nodeData={data.nodeMarket}>
       <Row
@@ -68,7 +70,7 @@ const IndexPage = ({ data }) => {
              className={"p-0 w-100 d-flex align-items-center justify-content-center overflow-hidden promotion-block"}>
           <a href={"https://lgus.csod.com/client/lgus/default.aspx"} className={"w-100"}>
             <img
-              src={promotion.relationships.field_image.localFile.publicURL}
+              src={promotionImage}
               alt={promotion.title}
               className={"img-fluid w-100"}
             />
