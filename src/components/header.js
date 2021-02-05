@@ -8,7 +8,7 @@ const Header = ({ data }) => {
   return (
     <Navbar bg={"light"} expand={"lg"} className={data.field_class}>
       <Navbar.Brand href={"/"}>
-        <img src={logo} alt={`${data.brandClass}-logo`}/>
+        <img src={logo} alt={`${data.brandClass}-logo`} className={"brand-logo"}/>
       </Navbar.Brand>
     </Navbar>
   )

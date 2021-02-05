@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 
 import ContactBlock from "../components/ContactBlock"
 import { graphql } from "gatsby"
-import { cmsImageEncoder } from "../helpers/helpers"
+import { cmsImageEncoder, ConditionalWrapper } from "../helpers/helpers"
 // import SubscribeBlock from "../components/SubscribeBlock"
 
 export const query = graphql`
@@ -37,6 +37,9 @@ export const query = graphql`
                         }
                         node__promotion {
                             title
+                            field_external_link{
+                                uri
+                            }
                             relationships {
                                 field_image {
                                     localFile {
@@ -68,13 +71,16 @@ const IndexPage = ({ data }) => {
         </Col>
         <Col xs={12} sm={7}
              className={"p-0 w-100 d-flex align-items-center justify-content-center overflow-hidden promotion-block"}>
-          <a href={"https://lgus.csod.com/client/lgus/default.aspx"} className={"w-100"}>
+          <ConditionalWrapper
+            condition={promotion.field_external_link}
+            wrapper={(children) => <a href={promotion.field_external_link.uri} className={"w-100"}>{children}</a>}
+          >
             <img
               src={promotionImage}
               alt={promotion.title}
               className={"img-fluid w-100"}
             />
-          </a>
+          </ConditionalWrapper>
         </Col>
       </Row>
       {/*<Row className={"d-flex justify-content-center"}>*/}

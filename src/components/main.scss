@@ -33,6 +33,10 @@ $brand-color-irobot: #49aa00;
   &.irobot {
     border-bottom: 5px solid $brand-color-irobot;
   }
+
+  .brand-logo {
+    max-width: 200px;
+  }
 }
 
 .xpert-row {
