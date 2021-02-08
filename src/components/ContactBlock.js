@@ -3,18 +3,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "gatsby"
 import { Button } from "react-bootstrap"
-import { formatPhoneNumber } from "../helpers/helpers"
+import { cmsImageEncoder, formatPhoneNumber } from "../helpers/helpers"
 
 const ContactBlock = ({ data }) => {
   const xpert = data.nodeMarket
   const vcardFileName = `${xpert.field_first_name}_${xpert.field_last_name}_${xpert.id}`.toLowerCase()
   const phone = formatPhoneNumber(xpert.field_phone)
+  const profileImage = cmsImageEncoder(xpert.relationships.field_profile_picture.localFile.publicURL)
   return (
     <div className={"d-flex justify-content-center user-info align-items-center"}>
 
       <div className={"user-picture"}>
         {xpert.relationships.field_profile_picture ?
-          <img src={xpert.relationships.field_profile_picture.localFile.publicURL}
+          <img src={profileImage}
                alt={`${xpert.field_first_name} ${xpert.field_last_name}`}
                className={"user-icon"}/>
           :
