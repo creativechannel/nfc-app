@@ -77,6 +77,9 @@ module.exports = {
         basicAuth: {
           username: process.env.BASIC_AUTH_USERNAME,
           password: process.env.BASIC_AUTH_PASSWORD
+        },
+        headers: {
+          'X-Consumer-ID': 'ff4f89ed-b4c9-45d4-bc68-3e4511b5e3ed'
         }
       }
     },
