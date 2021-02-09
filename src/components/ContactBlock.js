@@ -9,12 +9,13 @@ const ContactBlock = ({ data }) => {
   const xpert = data.nodeMarket
   const vcardFileName = `${xpert.field_first_name}_${xpert.field_last_name}_${xpert.id}`.toLowerCase()
   const phone = formatPhoneNumber(xpert.field_phone)
-  const profileImage = cmsImageEncoder(xpert.relationships.field_profile_picture.localFile.publicURL)
+  // const profileImage = cmsImageEncoder(xpert.relationships.field_profile_picture.localFile.publicURL)
+  const profileImage = xpert.field_profile_picture.imageDerivatives.links.profile_picture.href
   return (
     <div className={"d-flex justify-content-center user-info align-items-center"}>
 
       <div className={"user-picture"}>
-        {xpert.relationships.field_profile_picture ?
+        {xpert.field_profile_picture ?
           <img src={profileImage}
                alt={`${xpert.field_first_name} ${xpert.field_last_name}`}
                className={"user-icon"}/>

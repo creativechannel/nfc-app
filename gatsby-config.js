@@ -93,6 +93,14 @@ module.exports = {
           process.env.DC_FLOODIGHT_ID // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ]
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'nodeMarket',
+        imagePath: 'field_profile_picture.imageDerivatives.links.profile_picture.href',
+        name: 'profilePictures',
+      },
+    },
   ]
 }

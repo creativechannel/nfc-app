@@ -19,6 +19,15 @@ export const query = graphql`
             field_email
             field_phone
             field_job_title
+            field_profile_picture {
+                imageDerivatives {
+                    links {
+                        profile_picture {
+                            href
+                        }
+                    }
+                }
+            }
             relationships {
                 field_profile_picture {
                     localFile {
