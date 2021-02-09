@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 
 import ContactBlock from "../components/ContactBlock"
 import { graphql } from "gatsby"
-import { cmsImageEncoder, ConditionalWrapper } from "../helpers/helpers"
+import { ConditionalWrapper } from "../helpers/helpers"
 // import SubscribeBlock from "../components/SubscribeBlock"
 
 export const query = graphql`
@@ -43,7 +43,11 @@ export const query = graphql`
                             relationships {
                                 field_image {
                                     localFile {
-                                        publicURL
+                                        childrenImageSharp {
+                                            fluid(maxWidth:800) {
+                                                src
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -61,7 +65,7 @@ const IndexPage = ({ data }) => {
   }
   const promotions = data.nodeMarket.relationships.field_brand.relationships.node__promotion ? data.nodeMarket.relationships.field_brand.relationships.node__promotion : []
   const promotion = promotions[Math.floor(Math.random() * promotions.length)]
-  const promotionImage = cmsImageEncoder(promotion.relationships.field_image.localFile.publicURL)
+  const promotionImage = promotion.relationships.field_image.localFile.childrenImageSharp[0].fluid.src
   return (
     <Layout nodeData={data.nodeMarket}>
       <Row

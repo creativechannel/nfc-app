@@ -38,7 +38,7 @@ const ContactBlock = ({ data }) => {
         </div>
         <div className={"d-flex flex-row align-items-baseline"}>
           <div className={"w-25 email-label label"}>Email:</div>
-          <div className={"w-75 email"}><a href={`mailto:${xpert.field_email}`}>{`${xpert.field_email}`}</a></div>
+          <div className={"w-75 email text-truncate"}><a href={`mailto:${xpert.field_email}`}>{`${xpert.field_email}`}</a></div>
         </div>
         {phone &&
         <>
