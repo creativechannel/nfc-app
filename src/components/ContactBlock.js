@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "gatsby"
 import { Button } from "react-bootstrap"
-import { cmsImageEncoder, formatPhoneNumber } from "../helpers/helpers"
+import { formatPhoneNumber } from "../helpers/helpers"
 
 const ContactBlock = ({ data }) => {
   const xpert = data.nodeMarket

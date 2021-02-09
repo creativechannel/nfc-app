@@ -4,6 +4,7 @@ const fs = require("fs")
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+  const contactBlockTemplate_id = path.resolve("./src/templates/XpertPage_id.js")
   const contactBlockTemplate = path.resolve("./src/templates/XpertPage.js")
   const response = await graphql(`
     query {
@@ -11,6 +12,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            drupal_id
             field_first_name
             field_last_name
             field_email
@@ -29,10 +31,19 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
   response.data.allNodeMarket.edges.forEach((edge) => {
     createPage({
-      component: contactBlockTemplate,
+      component: contactBlockTemplate_id,
       path: `/market/${edge.node.id}`,
       context: {
-        slug: edge.node.id
+        slug: edge.node.id,
+        slug_type: "id"
+      }
+    })
+    createPage({
+      component: contactBlockTemplate,
+      path: `/market/${edge.node.drupal_id}`,
+      context: {
+        slug: edge.node.drupal_id,
+        slug_type: 'drupal_id'
       }
     })
     const contact = edge.node

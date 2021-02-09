@@ -9,10 +9,10 @@ import { ConditionalWrapper } from "../helpers/helpers"
 // import SubscribeBlock from "../components/SubscribeBlock"
 
 export const query = graphql`
-    query (
+    query nodeMarket (
         $slug: String!
     ){
-        nodeMarket(drupal_id: {eq: $slug}) {
+        nodeMarket(id: {eq: $slug}) {
             id
             field_first_name
             field_last_name
@@ -70,7 +70,7 @@ export const query = graphql`
 
 const IndexPage = ({ data, pageContext }) => {
   if (typeof window !== `undefined`) {
-    const id = data.nodeMarket.drupal_id
+    const id = data.nodeMarket.id
     localStorage.setItem("url", `/market/${id}`)
   }
   const promotions = data.nodeMarket.relationships.field_brand.relationships.node__promotion ? data.nodeMarket.relationships.field_brand.relationships.node__promotion : []
