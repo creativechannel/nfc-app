@@ -43,7 +43,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
       path: `/market/${edge.node.drupal_id}`,
       context: {
         slug: edge.node.drupal_id,
-        slug_type: 'drupal_id'
+        slug_type: "drupal_id"
       }
     })
     const contact = edge.node
@@ -60,3 +60,13 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions
+//   const typeDefs = `
+//     type NodeMarket implements Node {
+//       field_first_name: String
+//     }
+//   `
+//   createTypes(typeDefs)
+// }

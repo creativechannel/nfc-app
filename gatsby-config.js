@@ -97,9 +97,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-remote-images`,
       options: {
-        nodeType: "nodeMarket",
+        nodeType: "NodeMarket",
         imagePath: "field_profile_picture.imageDerivatives.links.profile_picture.href",
-        name: "profilePictures",
         auth: {
           htaccess_user: process.env.BASIC_AUTH_USERNAME,
           htaccess_pass: process.env.BASIC_AUTH_PASSWORD
