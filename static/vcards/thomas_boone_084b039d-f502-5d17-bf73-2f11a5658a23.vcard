@@ -1,8 +1,14 @@
 BEGIN:VCARD
 VERSION:3.0
-REV:2021-02-10T16:41:22.284Z
-N;CHARSET=utf-8:Boone;Thomas;Area Sales Manager;;
-FN;CHARSET=utf-8:Thomas Area Sales Manager Boone
+REV:2021-02-10T23:29:43.342Z
+N;CHARSET=utf-8:Boone;Thomas;;;
+FN;CHARSET=utf-8:Thomas Boone
 EMAIL;INTERNET:tboone@lgretail.com
-TEL:713-899-0252
+TEL:(713) 899-0252
+TITLE;CHARSET=utf-8:Area Sales Manager
+ORG;CHARSET=utf-8:LG Retail
+PHOTO;VALUE=uri:http://drupal-dev.eba-fkhp4mkr.us-east-1.elasticbeanstalk
+ .com/sites/default/files/styles/profile_picture/public/2021-01/imgpsh_mob
+ ile_save.jpg?h=7c094b9b&itok=9Nx3ZA_K:
+URL:http://contap.co/market/e26d8a39-fc67-4bc9-ab86-86cb33e611f7
 END:VCARD

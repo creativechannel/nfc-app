@@ -5,8 +5,8 @@ import Layout from "../components/layout"
 
 import ContactBlock from "../components/ContactBlock"
 import { graphql } from "gatsby"
-import { ConditionalWrapper } from "../helpers/helpers"
-// import SubscribeBlock from "../components/SubscribeBlock"
+import SubscribeBlock from "../components/SubscribeBlock"
+import PromotionBlock from "../components/PromotionBlock"
 
 export const query = graphql`
     query (
@@ -19,6 +19,7 @@ export const query = graphql`
             field_email
             field_phone
             field_job_title
+            field_quote
             field_profile_picture {
                 imageDerivatives {
                     links {
@@ -46,6 +47,7 @@ export const query = graphql`
                         }
                         node__promotion {
                             title
+                            field_call_to_action
                             field_external_link{
                                 uri
                             }
@@ -68,40 +70,30 @@ export const query = graphql`
     }
 `
 
-const IndexPage = ({ data, pageContext }) => {
+const IndexPage = ({ data }) => {
   if (typeof window !== `undefined`) {
     const id = data.nodeMarket.drupal_id
     localStorage.setItem("url", `/market/${id}`)
   }
   const promotions = data.nodeMarket.relationships.field_brand.relationships.node__promotion ? data.nodeMarket.relationships.field_brand.relationships.node__promotion : []
   const promotion = promotions[Math.floor(Math.random() * promotions.length)]
-  const promotionImage = promotion.relationships.field_image.localFile.childrenImageSharp[0].fluid.src
   return (
     <Layout nodeData={data.nodeMarket}>
       <Row
         className={`xpert-row justify-content-center align-items-center`}>
-        <Col xs={12} sm={5} className={"user-info-block d-flex align-items-center justify-content-center"}>
+        <Col md={12} lg={5} className={"user-info-block d-flex align-items-center justify-content-center py-4"}>
           <ContactBlock data={data}/>
         </Col>
-        <Col xs={12} sm={7}
+        <Col md={12} lg={7}
              className={"p-0 w-100 d-flex align-items-center justify-content-center overflow-hidden promotion-block"}>
-          <ConditionalWrapper
-            condition={promotion.field_external_link}
-            wrapper={(children) => <a href={promotion.field_external_link.uri} className={"w-100"}>{children}</a>}
-          >
-            <img
-              src={promotionImage}
-              alt={promotion.title}
-              className={"img-fluid w-100"}
-            />
-          </ConditionalWrapper>
+          <PromotionBlock promotion={promotion}/>
         </Col>
       </Row>
-      {/*<Row className={"d-flex justify-content-center"}>*/}
-      {/*  <Col className={"subscribe-block"}>*/}
-      {/*    <SubscribeBlock/>*/}
-      {/*  </Col>*/}
-      {/*</Row>*/}
+      <Row className={"d-flex justify-content-center"}>
+        <Col md={11} lg={12} className={"subscribe-block"}>
+          <SubscribeBlock/>
+        </Col>
+      </Row>
     </Layout>
   )
 }

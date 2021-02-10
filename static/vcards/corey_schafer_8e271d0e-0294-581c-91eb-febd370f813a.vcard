@@ -1,8 +1,14 @@
 BEGIN:VCARD
 VERSION:3.0
-REV:2021-02-10T16:41:22.285Z
-N;CHARSET=utf-8:Schafer;Corey;Area Sales Manager;;
-FN;CHARSET=utf-8:Corey Area Sales Manager Schafer
+REV:2021-02-10T23:29:43.339Z
+N;CHARSET=utf-8:Schafer;Corey;;;
+FN;CHARSET=utf-8:Corey Schafer
 EMAIL;INTERNET:cschafer@lgretail.com
-TEL:2133931905
+TEL:(213) 393-1905
+TITLE;CHARSET=utf-8:Area Sales Manager
+ORG;CHARSET=utf-8:LG Retail
+PHOTO;VALUE=uri:http://drupal-dev.eba-fkhp4mkr.us-east-1.elasticbeanstalk
+ .com/sites/default/files/styles/profile_picture/public/2021-01/8461f5f6-1
+ 7af-43fc-aab5-002796e0a5db_0.jpg?itok=Rg_zvf1e:
+URL:http://contap.co/market/c55bf7c8-948e-4b11-9932-662477d9c4ba
 END:VCARD

@@ -1,8 +1,14 @@
 BEGIN:VCARD
 VERSION:3.0
-REV:2021-02-10T16:41:22.285Z
-N;CHARSET=utf-8:Bartolo;Phillip;Virtual Brand Manager;;
-FN;CHARSET=utf-8:Phillip Virtual Brand Manager Bartolo
+REV:2021-02-10T23:29:43.339Z
+N;CHARSET=utf-8:Bartolo;Phillip;;;
+FN;CHARSET=utf-8:Phillip Bartolo
 EMAIL;INTERNET:pbartolo@creativechannel.com
-TEL:4074603126
+TEL:(407) 460-3126
+TITLE;CHARSET=utf-8:Virtual Brand Manager
+ORG;CHARSET=utf-8:iRobot
+PHOTO;VALUE=uri:http://drupal-dev.eba-fkhp4mkr.us-east-1.elasticbeanstalk
+ .com/sites/default/files/styles/profile_picture/public/2021-02/Phillip.jp
+ g?h=fa5dfb48&itok=C_wg87Q5:
+URL:http://contap.co/market/ffd49e8e-5521-47bc-a3fb-a60d067d984d
 END:VCARD

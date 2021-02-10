@@ -11,6 +11,11 @@ $brand-color-irobot: #49aa00;
   .btn-outline-primary {
     @include button-outline-variant($brand-color-lg, #222222, lighten($brand-color-lg, 5%), $brand-color-lg);
   }
+
+  .cta {
+    color: #ffffff;
+    background: $brand-color-lg;
+  }
 }
 
 .irobot {
@@ -20,6 +25,11 @@ $brand-color-irobot: #49aa00;
 
   .btn-outline-primary {
     @include button-outline-variant($brand-color-irobot, #222222, lighten($brand-color-irobot, 5%), $brand-color-irobot);
+  }
+
+  .cta {
+    color: #ffffff;
+    background: $brand-color-irobot;
   }
 }
 
@@ -45,7 +55,7 @@ $brand-color-irobot: #49aa00;
 
 .user-info-block {
   background-color: #F3F4F6;
-  height: 470px;
+  min-height: 470px;
 
   a {
     text-decoration: none;
@@ -95,18 +105,26 @@ $brand-color-irobot: #49aa00;
     .email, .phone, .sms {
       font-size: 20px;
     }
+
+    .quote {
+    }
   }
 }
 
 .promotion-block {
   @include media-breakpoint-up(sm) {
-    height: 470px;
+    min-height: 470px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .cta {
+    font-size: 20px;
   }
 }
 
 .subscribe-block {
-  height: 470px;
+  min-height: 470px;
   @include media-breakpoint-up(sm) {
-    max-width: 60%;
   }
 }

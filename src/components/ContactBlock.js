@@ -29,7 +29,7 @@ const ContactBlock = ({ data }) => {
       <div className={"user-data d-flex flex-column w-75"}>
         <div className={"d-flex "}>
           <div className={"title"}>
-            {xpert.job_title}
+            {xpert.field_job_title}
           </div>
         </div>
         <div>
@@ -54,6 +54,11 @@ const ContactBlock = ({ data }) => {
         }
         <Link to={`/vcards/${vcardFileName}.vcard`}>
           <Button variant="primary" size={"lg"} className={"mt-3"} block>Download vCard</Button></Link>
+        {xpert.field_quote &&
+          <div className={"d-flex flex-row align-items-baseline mt-4 mb-4"}>
+          <div className={"w-100 quote text-center font-italic font-weight-bold"}>"{xpert.field_quote}"</div>
+        </div>
+        }
       </div>
 
     </div>

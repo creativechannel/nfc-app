@@ -1,8 +1,14 @@
 BEGIN:VCARD
 VERSION:3.0
-REV:2021-02-10T16:41:22.284Z
-N;CHARSET=utf-8:Garcia;Herbert;Area Sales Manager;;
-FN;CHARSET=utf-8:Herbert Area Sales Manager Garcia
+REV:2021-02-10T23:29:43.338Z
+N;CHARSET=utf-8:Garcia;Herbert;;;
+FN;CHARSET=utf-8:Herbert Garcia
 EMAIL;INTERNET:hgarcia@lgretail.com
-TEL:347-437-1311
+TEL:(347) 437-1311
+TITLE;CHARSET=utf-8:Area Sales Manager
+ORG;CHARSET=utf-8:LG Retail
+PHOTO;VALUE=uri:http://drupal-dev.eba-fkhp4mkr.us-east-1.elasticbeanstalk
+ .com/sites/default/files/styles/profile_picture/public/2021-01/452c1098-7
+ be3-45d2-be43-7540cc57d338.jpg?itok=ZsFCTzJq:
+URL:http://contap.co/market/e4142ab0-e599-4cf0-ad5a-d67dba50b6c0
 END:VCARD

@@ -1,8 +1,14 @@
 BEGIN:VCARD
 VERSION:3.0
-REV:2021-02-10T16:41:22.284Z
-N;CHARSET=utf-8:Ekstam;Damon;Area Sales Manager;;
-FN;CHARSET=utf-8:Damon Area Sales Manager Ekstam
+REV:2021-02-10T23:29:43.338Z
+N;CHARSET=utf-8:Ekstam;Damon;;;
+FN;CHARSET=utf-8:Damon Ekstam
 EMAIL;INTERNET:dekstam@lgretail.com
-TEL:8038330296
+TEL:(803) 833-0296
+TITLE;CHARSET=utf-8:Area Sales Manager
+ORG;CHARSET=utf-8:LG Retail
+PHOTO;VALUE=uri:http://drupal-dev.eba-fkhp4mkr.us-east-1.elasticbeanstalk
+ .com/sites/default/files/styles/profile_picture/public/2021-01/Damon.jpg?
+ itok=bMlpv52_:
+URL:http://contap.co/market/61e25455-3ebb-4fc9-90e7-cbae7e3af2fb
 END:VCARD
