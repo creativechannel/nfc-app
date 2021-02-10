@@ -29,7 +29,7 @@ module.exports = {
         background_color: "#6b37bf",
         theme_color: "#6b37bf",
         display: "standalone",
-        icon: "src/images/icon.jpg",
+        icon: "src/images/icon.jpg"
       }
     },
     {
@@ -79,7 +79,7 @@ module.exports = {
           password: process.env.BASIC_AUTH_PASSWORD
         },
         headers: {
-          'X-Consumer-ID': 'ff4f89ed-b4c9-45d4-bc68-3e4511b5e3ed'
+          "X-Consumer-ID": "ff4f89ed-b4c9-45d4-bc68-3e4511b5e3ed"
         }
       }
     },
@@ -97,10 +97,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-remote-images`,
       options: {
-        nodeType: 'nodeMarket',
-        imagePath: 'field_profile_picture.imageDerivatives.links.profile_picture.href',
-        name: 'profilePictures',
-      },
-    },
+        nodeType: "nodeMarket",
+        imagePath: "field_profile_picture.imageDerivatives.links.profile_picture.href",
+        name: "profilePictures",
+        auth: {
+          htaccess_user: process.env.BASIC_AUTH_USERNAME,
+          htaccess_pass: process.env.BASIC_AUTH_PASSWORD
+        }
+      }
+    }
   ]
 }
