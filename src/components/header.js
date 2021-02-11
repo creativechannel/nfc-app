@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { Navbar, Nav } from "react-bootstrap"
+import { Navbar} from "react-bootstrap"
 // import { FaEnvelope } from "@react-icons/all-files/fa/faEnvelope"
 // import { IconContext } from "@react-icons/all-files"
 import { cmsImageEncoder } from "../helpers/helpers"
