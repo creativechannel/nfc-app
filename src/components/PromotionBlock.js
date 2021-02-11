@@ -6,7 +6,7 @@ const PromotionBlock = ({ promotion }) => {
 
   return (
 
-    <div className={"d-flex flex-column"}>
+    <div className={"d-flex flex-column w-100"}>
       <ConditionalWrapper
         condition={promotion.field_external_link}
         wrapper={(children) => <a href={promotion.field_external_link.uri} className={"w-100"}>{children}</a>}
