@@ -37,6 +37,11 @@ const ContactBlock = ({ data }) => {
             {`${xpert.field_first_name} ${xpert.field_last_name}`}
           </div>
         </div>
+        {xpert.field_quote &&
+        <div className={"d-flex flex-row align-items-baseline mt-1 mb-2"}>
+          <div className={"w-100 quote font-italic font-weight-bold"}>"{xpert.field_quote}"</div>
+        </div>
+        }
         <div className={"d-flex flex-row align-items-baseline"}>
           <div className={"w-25 email-label label"}>Email:</div>
           <div className={"w-75 email text-truncate"}><a href={`mailto:${xpert.field_email}`}>{`${xpert.field_email}`}</a></div>
@@ -54,11 +59,6 @@ const ContactBlock = ({ data }) => {
         }
         <Link to={`/vcards/${vcardFileName}.vcard`}>
           <Button variant="primary" size={"lg"} className={"mt-3"} block>Download vCard</Button></Link>
-        {xpert.field_quote &&
-          <div className={"d-flex flex-row align-items-baseline mt-4 mb-4"}>
-          <div className={"w-100 quote text-center font-italic font-weight-bold"}>"{xpert.field_quote}"</div>
-        </div>
-        }
       </div>
 
     </div>
