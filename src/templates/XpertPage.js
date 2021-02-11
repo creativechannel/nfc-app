@@ -1,5 +1,5 @@
 import React from "react"
-import { Row, Col, Form, Button, Container } from "react-bootstrap"
+import { Row, Col } from "react-bootstrap"
 
 import Layout from "../components/layout"
 
@@ -15,6 +15,7 @@ export const query = graphql`
     ){
         nodeMarket(drupal_id: {eq: $slug}) {
             id
+            drupal_id
             field_first_name
             field_last_name
             field_email
@@ -99,9 +100,9 @@ const IndexPage = ({ data }) => {
         </Col>
       </Row>
       <Row className={"d-flex justify-content-center"}>
-        <Col className={"product-spotlight-block"}>
+        <Col md={12} lg={8} className={"product-spotlight-block"}>
           <div>
-            <h2 className={"mb-3"}>Product Spotlight</h2>
+            <h2 className={"mb-3 mb-lg-5 text-lg-center"}>Product Spotlight</h2>
             {promotions.map((product) => {
               return (
                 <Row className={"mb-3"} style={{ maxHeight: "90px", overflow: "hidden" }}>

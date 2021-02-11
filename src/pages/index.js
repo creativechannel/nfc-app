@@ -5,8 +5,10 @@ import "../components/main.scss"
 const IndexPage = () => {
   let url = ""
   if (typeof window !== `undefined`) {
+    console.log(url)
     url = localStorage.getItem("url")
-    if (url) {
+    if (url && url !== "undefined" && url !=="/market/undefined") {
+      console.log(url)
       navigate(url)
       return null
     }

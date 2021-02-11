@@ -79,7 +79,10 @@ module.exports.createPages = async ({ graphql, actions }) => {
     xpertCard.addURL(`${process.env.FRONTEND_URL}/market/${edge.node.drupal_id}`)
     // console.log(xpertCard.toString())
     const fileName = `${contact.field_first_name}_${contact.field_last_name}_${contact.id}`.toLowerCase()
+    const fileName_did = `${contact.field_first_name}_${contact.field_last_name}_${contact.drupal_id}`.toLowerCase()
     fs.writeFile(`./static/vcards/${fileName}.vcard`, xpertCard.toString(), () => {
+    })
+    fs.writeFile(`./static/vcards/${fileName_did}.vcard`, xpertCard.toString(), () => {
     })
   })
 }
