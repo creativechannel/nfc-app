@@ -5,9 +5,11 @@ import Layout from "../components/layout"
 
 import ContactBlock from "../components/ContactBlock"
 import { graphql } from "gatsby"
-// import SubscribeBlock from "../components/SubscribeBlock"
+import SubscribeBlock from "../components/SubscribeBlock"
 import PromotionBlock from "../components/PromotionBlock"
-// import ScheduleBlock from "../components/ScheduleBlock"
+import ScheduleBlock from "../components/ScheduleBlock"
+import RetailerBlock from "../components/RetailerBlock"
+import AddToHomeScreen from "../components/AddToHomeScreen"
 
 export const query = graphql`
     query nodeMarket (
@@ -79,6 +81,7 @@ const IndexPage = ({ data, pageContext }) => {
   const promotion = promotions[Math.floor(Math.random() * promotions.length)]
   return (
     <Layout nodeData={data.nodeMarket}>
+      <AddToHomeScreen/>
       <Row
         className={`xpert-row justify-content-center align-items-center`}>
         <Col md={12} lg={5} className={"user-info-block d-flex align-items-center justify-content-center py-4"}>
@@ -89,14 +92,19 @@ const IndexPage = ({ data, pageContext }) => {
           <PromotionBlock promotion={promotion}/>
         </Col>
       </Row>
-      {/*<Row className={"d-flex justify-content-center"}>*/}
-      {/*  <Col md={12} lg={5} className={"subscribe-block"}>*/}
-      {/*    <SubscribeBlock/>*/}
-      {/*  </Col>*/}
-      {/*  <Col md={12} lg={7} className={"schedule-block"}>*/}
-      {/*    <ScheduleBlock/>*/}
-      {/*  </Col>*/}
-      {/*</Row>*/}
+      <Row className={"d-flex justify-content-center"}>
+        <Col md={12} lg={5} className={"subscribe-block"}>
+          <SubscribeBlock/>
+        </Col>
+        <Col md={12} lg={7} className={"schedule-block"}>
+          <ScheduleBlock/>
+        </Col>
+      </Row>
+      <Row className={"d-flex justify-content-center"}>
+        <Col className={"retailers-block"} style={{ paddingTop: "30px", paddingBottom: "30px" }}>
+          <RetailerBlock/>
+        </Col>
+      </Row>
       {/*<Row className={"d-flex justify-content-center"}>*/}
       {/*  <Col md={12} lg={8} className={"product-spotlight-block"}>*/}
       {/*    <div>*/}
