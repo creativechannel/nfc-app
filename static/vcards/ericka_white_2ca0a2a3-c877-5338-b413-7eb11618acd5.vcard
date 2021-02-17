@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+REV:2021-02-17T19:49:04.084Z
+N;CHARSET=utf-8:White;Ericka;;;
+FN;CHARSET=utf-8:Ericka White
+EMAIL;INTERNET:ewhite@creativechannel.com
+TEL:(202) 997-6228
+TITLE;CHARSET=utf-8:Virtual Brand Manager
+ORG;CHARSET=utf-8:iRobot
+PHOTO;VALUE=uri:http://drupal-dev.eba-fkhp4mkr.us-east-1.elasticbeanstalk
+ .com/sites/default/files/styles/profile_picture/public/2021-02/ericka.png
+ ?h=2f32a87e&itok=vX5cWLyn:
+URL:http://contap.co/market/4c58dd63-1a3e-4d49-a818-81efb64575ff
+END:VCARD

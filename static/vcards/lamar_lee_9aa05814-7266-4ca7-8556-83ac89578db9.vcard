@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+REV:2021-02-17T19:49:04.083Z
+N;CHARSET=utf-8:Lee;Lamar;;;
+FN;CHARSET=utf-8:Lamar Lee
+EMAIL;INTERNET:llee@creativechannel.com
+TEL:(773) 383-8937
+TITLE;CHARSET=utf-8:Virtual Brand Manager
+ORG;CHARSET=utf-8:iRobot
+PHOTO;VALUE=uri:http://drupal-dev.eba-fkhp4mkr.us-east-1.elasticbeanstalk
+ .com/sites/default/files/styles/profile_picture/public/2021-02/lamar.jpg?
+ h=e2008643&itok=_aNGkapd:
+URL:http://contap.co/market/9aa05814-7266-4ca7-8556-83ac89578db9
+END:VCARD

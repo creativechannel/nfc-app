@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+REV:2021-02-17T19:49:04.086Z
+N;CHARSET=utf-8:Zobel;Nick;;;
+FN;CHARSET=utf-8:Nick Zobel
+EMAIL;INTERNET:nzobel@creativechannel.com
+TEL:(612) 709-4978
+TITLE;CHARSET=utf-8:Virtual Brand Manager
+ORG;CHARSET=utf-8:iRobot
+PHOTO;VALUE=uri:http://drupal-dev.eba-fkhp4mkr.us-east-1.elasticbeanstalk
+ .com/sites/default/files/styles/profile_picture/public/2021-02/Nick%20Zob
+ el.png?h=0eeccf88&itok=pf24hI1n:
+URL:http://contap.co/market/304ed54f-fd38-4acb-95a2-46d29e9c5db8
+END:VCARD
