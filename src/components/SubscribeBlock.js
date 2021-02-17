@@ -5,8 +5,7 @@ const SubscribeBlock = () => {
 
   return (
     <div className={"h-100 d-flex flex-column"}>
-      <h2>Subscribe for a chance to win</h2>
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+      <h2 className={"text-center"}>Subscribe for a chance to win</h2>
       <Form>
         <Row>
           <Col>

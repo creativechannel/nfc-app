@@ -5,9 +5,9 @@ import Layout from "../components/layout"
 
 import ContactBlock from "../components/ContactBlock"
 import { graphql } from "gatsby"
-// import SubscribeBlock from "../components/SubscribeBlock"
+import SubscribeBlock from "../components/SubscribeBlock"
 import PromotionBlock from "../components/PromotionBlock"
-// import ScheduleBlock from "../components/ScheduleBlock"
+import ScheduleBlock from "../components/ScheduleBlock"
 
 export const query = graphql`
     query (
@@ -90,14 +90,14 @@ const IndexPage = ({ data }) => {
           <PromotionBlock promotion={promotion}/>
         </Col>
       </Row>
-      {/*<Row className={"d-flex justify-content-center"}>*/}
-      {/*  <Col md={12} lg={5} className={"subscribe-block"}>*/}
-      {/*    <SubscribeBlock/>*/}
-      {/*  </Col>*/}
-      {/*  <Col md={12} lg={7} className={"schedule-block"}>*/}
-      {/*    <ScheduleBlock/>*/}
-      {/*  </Col>*/}
-      {/*</Row>*/}
+      <Row className={"d-flex justify-content-center"}>
+        <Col md={12} lg={5} className={"subscribe-block"}>
+          <SubscribeBlock/>
+        </Col>
+        <Col md={12} lg={7} className={"schedule-block"}>
+          <ScheduleBlock/>
+        </Col>
+      </Row>
       {/*<Row className={"d-flex justify-content-center"}>*/}
       {/*  <Col md={12} lg={8} className={"product-spotlight-block"}>*/}
       {/*    <div>*/}

@@ -169,3 +169,14 @@ $brand-color-irobot: #49aa00;
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+.add-to-home-banner {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background: white;
+  color: black;
+  z-index: 1000;
+  left: 0;
+  height: 60px;
+}

@@ -4,7 +4,7 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap"
 const ScheduleBlock = () => {
   return (
     <div className={"d-flex flex-column h-100"}>
-      <h2 className={"mb-4"}>Upcoming schedule</h2>
+      <h2 className={"mb-4 text-center"}>Upcoming schedule</h2>
       <Form>
         <Row>
           <Col md={8}>
