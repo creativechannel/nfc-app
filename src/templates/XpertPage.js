@@ -21,7 +21,6 @@ export const query = graphql`
             field_email
             field_phone
             field_job_title
-            field_quote
             field_profile_picture {
                 imageDerivatives {
                     links {
