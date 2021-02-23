@@ -10,12 +10,12 @@ const ContactBlock = ({ data }) => {
   const vcardFileName = `${xpert.field_first_name}_${xpert.field_last_name}_${xpert.id}`.toLowerCase()
   const phone = formatPhoneNumber(xpert.field_phone)
   // const profileImage = cmsImageEncoder(xpert.relationships.field_profile_picture.localFile.publicURL)
-  const profileImage = xpert.field_profile_picture.imageDerivatives.links.profile_picture.href
+  const profileImage = xpert.field_profile_picture ? xpert.field_profile_picture.imageDerivatives.links.profile_picture.href : null
   return (
     <div className={"d-flex justify-content-center user-info align-items-center"}>
 
       <div className={"user-picture"}>
-        {xpert.field_profile_picture ?
+        {profileImage ?
           <img src={profileImage}
                alt={`${xpert.field_first_name} ${xpert.field_last_name}`}
                className={"user-icon"}/>

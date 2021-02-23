@@ -2,6 +2,7 @@
 
 $brand-color-lg: #A50034;
 $brand-color-irobot: #49aa00;
+$brand-color-midea: #00b0f0;
 
 .lgretail {
   .btn-primary {
@@ -48,6 +49,30 @@ $brand-color-irobot: #49aa00;
   .add-to-home-banner {
     color: white;
     background: $brand-color-irobot;
+  }
+}
+
+.midea {
+  .btn-primary {
+    @include button-variant($brand-color-midea, darken($brand-color-midea, 7.5%), darken($brand-color-midea, 10%), lighten($brand-color-midea, 5%), lighten($brand-color-midea, 10%), darken($brand-color-midea, 30%));
+  }
+
+  .btn-outline-primary {
+    @include button-outline-variant($brand-color-midea, #222222, lighten($brand-color-midea, 5%), $brand-color-midea);
+  }
+
+  .cta {
+    color: white;
+    background: $brand-color-midea;
+  }
+
+  .notification-icon:hover {
+    color: $brand-color-midea;
+  }
+
+  .add-to-home-banner {
+    color: white;
+    background: $brand-color-midea;
   }
 }
 
