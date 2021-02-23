@@ -93,41 +93,41 @@ const IndexPage = ({ data, pageContext }) => {
           <PromotionBlock promotion={promotion}/>
         </Col>
       </Row>
-      <Row className={"d-flex justify-content-center"}>
-        <Col md={12} lg={5} className={"subscribe-block"}>
-          <SubscribeBlock/>
-        </Col>
-        <Col md={12} lg={7} className={"schedule-block"}>
-          <ScheduleBlock/>
-        </Col>
-      </Row>
-      <Row className={"d-flex justify-content-center"}>
-        <Col className={"retailers-block"} style={{ paddingTop: "30px", paddingBottom: "30px" }}>
-          <RetailerBlock/>
-        </Col>
-      </Row>
-      <Row className={"d-flex justify-content-center"}>
-        <Col md={12} lg={8} className={"product-spotlight-block"}>
-          <div>
-            <h2 className={"mb-3 mb-lg-5 text-lg-center"}>Product Spotlight</h2>
-            {promotions.map((product) => {
-              return (
-                <Row className={"mb-3"} style={{ maxHeight: "90px", overflow: "hidden" }} key={product.title}>
-                  <Col>
-                    <img src={product.relationships.field_image.localFile.childrenImageSharp[0].fluid.src}
-                         alt={"alt-text"}
-                         className={"img-fluid w-100"}/>
-                  </Col>
-                  <Col xs={6}>
-                    <h5>Product name</h5>
-                    <p>Product description</p>
-                  </Col>
-                </Row>
-              )
-            })}
-          </div>
-        </Col>
-      </Row>
+      {/*<Row className={"d-flex justify-content-center"}>*/}
+      {/*  <Col md={12} lg={5} className={"subscribe-block"}>*/}
+      {/*    <SubscribeBlock/>*/}
+      {/*  </Col>*/}
+      {/*  <Col md={12} lg={7} className={"schedule-block"}>*/}
+      {/*    <ScheduleBlock/>*/}
+      {/*  </Col>*/}
+      {/*</Row>*/}
+      {/*<Row className={"d-flex justify-content-center"}>*/}
+      {/*  <Col className={"retailers-block"} style={{ paddingTop: "30px", paddingBottom: "30px" }}>*/}
+      {/*    <RetailerBlock/>*/}
+      {/*  </Col>*/}
+      {/*</Row>*/}
+      {/*<Row className={"d-flex justify-content-center"}>*/}
+      {/*  <Col md={12} lg={8} className={"product-spotlight-block"}>*/}
+      {/*    <div>*/}
+      {/*      <h2 className={"mb-3 mb-lg-5 text-lg-center"}>Product Spotlight</h2>*/}
+      {/*      {promotions.map((product) => {*/}
+      {/*        return (*/}
+      {/*          <Row className={"mb-3"} style={{ maxHeight: "90px", overflow: "hidden" }} key={product.title}>*/}
+      {/*            <Col>*/}
+      {/*              <img src={product.relationships.field_image.localFile.childrenImageSharp[0].fluid.src}*/}
+      {/*                   alt={"alt-text"}*/}
+      {/*                   className={"img-fluid w-100"}/>*/}
+      {/*            </Col>*/}
+      {/*            <Col xs={6}>*/}
+      {/*              <h5>Product name</h5>*/}
+      {/*              <p>Product description</p>*/}
+      {/*            </Col>*/}
+      {/*          </Row>*/}
+      {/*        )*/}
+      {/*      })}*/}
+      {/*    </div>*/}
+      {/*  </Col>*/}
+      {/*</Row>*/}
     </Layout>
   )
 }
