@@ -13,12 +13,17 @@ $brand-color-irobot: #49aa00;
   }
 
   .cta {
-    color: #ffffff;
+    color: white;
     background: $brand-color-lg;
   }
 
   .notification-icon:hover {
     color: $brand-color-lg;
+  }
+
+  .add-to-home-banner {
+    color: white;
+    background: $brand-color-lg;
   }
 }
 
@@ -32,12 +37,17 @@ $brand-color-irobot: #49aa00;
   }
 
   .cta {
-    color: #ffffff;
+    color: white;
     background: $brand-color-irobot;
   }
 
   .notification-icon:hover {
     color: $brand-color-irobot;
+  }
+
+  .add-to-home-banner {
+    color: white;
+    background: $brand-color-irobot;
   }
 }
 
@@ -174,9 +184,7 @@ $brand-color-irobot: #49aa00;
   position: fixed;
   width: 100%;
   bottom: 0;
-  background: white;
-  color: black;
   z-index: 1000;
-  left: 0;
   height: 60px;
+  font-weight: bold;
 }

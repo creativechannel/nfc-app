@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Container, Row, Col } from "react-bootstrap"
 import { MdClose } from "@react-icons/all-files/md/MdClose"
 import { MdGetApp } from "@react-icons/all-files/md/MdGetApp"
 
@@ -20,24 +21,26 @@ const AddToHomeScreen = () => {
     }
     return false
   }
-  const shouldRender = visible && isIos() && !isInStandaloneMode()
+  const shouldRender = visible && isIos() && isInStandaloneMode()
   return (
     <div>
       {shouldRender ? (
-        <div className="d-flex add-to-home-banner align-items-center justify-content-center p-3">
-          <div className="add-to-home-content d-flex align-items-center">
-            <div className="add-to-home-text mr-1">
+        <Row className={"add-to-home-banner"}>
+          <Col xs={10} className={"d-flex align-items-center justify-content-center pr-0 pl-5"}>
+            <div className="add-to-home-text mr-3">
               <a>
-                {"Add to home screen"}
+                {"Add to Home Screen"}
               </a>
             </div>
             <MdGetApp/>
-          </div>
-          <MdClose
-            className="add-to-home-close-btn"
-            onClick={handleCloseBannerBtnClick}
-          />
-        </div>
+          </Col>
+          <Col xs={2} className={"d-flex align-items-center justify-content-center pr-0 pl-0"}>
+            <MdClose
+              className="add-to-home-close-btn"
+              onClick={handleCloseBannerBtnClick}
+            />
+          </Col>
+        </Row>
       ) : null}
     </div>
   )
