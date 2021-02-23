@@ -29,7 +29,8 @@ module.exports = {
         background_color: "#6b37bf",
         theme_color: "#6b37bf",
         display: "standalone",
-        icon: "src/images/aae_icon.png"
+        icon: "src/images/aae_icon.png",
+        start_url:"/"
       }
     },
     {
