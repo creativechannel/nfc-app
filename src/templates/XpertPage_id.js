@@ -94,18 +94,20 @@ const IndexPage = ({ data, pageContext }) => {
         </Col>
       </Row>
       <Row className={"d-flex justify-content-center"}>
-        <Col md={12} lg={5} className={"subscribe-block"}>
-          <SubscribeBlock/>
-        </Col>
-        <Col md={12} lg={7} className={"schedule-block"}>
+        {/*<Col md={12} lg={5} className={"subscribe-block"}>*/}
+        {/*  <SubscribeBlock/>*/}
+        {/*</Col>*/}
+        <Col md={12}
+             // lg={7}
+             className={"schedule-block"}>
           <ScheduleBlock/>
         </Col>
       </Row>
-      <Row className={"d-flex justify-content-center"}>
-        <Col className={"retailers-block"} style={{ paddingTop: "30px", paddingBottom: "30px" }}>
-          <RetailerBlock/>
-        </Col>
-      </Row>
+      {/*<Row className={"d-flex justify-content-center"}>*/}
+      {/*  <Col className={"retailers-block"} style={{ paddingTop: "30px", paddingBottom: "30px" }}>*/}
+      {/*    <RetailerBlock/>*/}
+      {/*  </Col>*/}
+      {/*</Row>*/}
       <Row className={"d-flex justify-content-center"}>
         <Col md={12} lg={8} className={"product-spotlight-block"}>
           <div>
