@@ -9,7 +9,8 @@ import SubscribeBlock from "../components/SubscribeBlock"
 import PromotionBlock from "../components/PromotionBlock"
 import ScheduleBlock from "../components/ScheduleBlock"
 import RetailerBlock from "../components/RetailerBlock"
-import AddToHomeScreen from "../components/AddToHomeScreen"
+// import AddToHomeScreen from "../components/AddToHomeScreen"
+import PWAInstall from "../components/PWAInstall"
 
 export const query = graphql`
     query nodeMarket (
@@ -81,7 +82,7 @@ const IndexPage = ({ data, pageContext }) => {
   const promotion = promotions[Math.floor(Math.random() * promotions.length)]
   return (
     <Layout nodeData={data.nodeMarket}>
-      <AddToHomeScreen/>
+      <PWAInstall/>
       <Row
         className={`xpert-row justify-content-center align-items-center`}>
         <Col md={12} lg={5} className={"user-info-block d-flex align-items-center justify-content-center py-4"}>
@@ -111,7 +112,7 @@ const IndexPage = ({ data, pageContext }) => {
             <h2 className={"mb-3 mb-lg-5 text-lg-center"}>Product Spotlight</h2>
             {promotions.map((product) => {
               return (
-                <Row className={"mb-3"} style={{ maxHeight: "90px", overflow: "hidden" }}>
+                <Row className={"mb-3"} style={{ maxHeight: "90px", overflow: "hidden" }} key={product.title}>
                   <Col>
                     <img src={product.relationships.field_image.localFile.childrenImageSharp[0].fluid.src}
                          alt={"alt-text"}
