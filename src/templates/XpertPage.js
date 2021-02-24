@@ -5,10 +5,10 @@ import Layout from "../components/layout"
 
 import ContactBlock from "../components/ContactBlock"
 import { graphql } from "gatsby"
-import SubscribeBlock from "../components/SubscribeBlock"
+// import SubscribeBlock from "../components/SubscribeBlock"
 import PromotionBlock from "../components/PromotionBlock"
-import ScheduleBlock from "../components/ScheduleBlock"
-import RetailerBlock from "../components/RetailerBlock"
+// import ScheduleBlock from "../components/ScheduleBlock"
+// import RetailerBlock from "../components/RetailerBlock"
 
 export const query = graphql`
     query (
