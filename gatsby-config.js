@@ -1,5 +1,5 @@
-const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
-
+const activeEnv =  "development"
+console.log("Active Env:", process.env.GATSBY_ACTIVE_ENV)
 console.log(`Using environment config: '${activeEnv}'`)
 require("dotenv").config({
   path: `.env.${activeEnv}`
@@ -30,7 +30,7 @@ module.exports = {
         theme_color: "#6b37bf",
         display: "standalone",
         icon: "src/images/aae_icon.png",
-        start_url:"/"
+        start_url: "/"
       }
     },
     {

@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+REV:2021-02-24T00:01:45.038Z
+N;CHARSET=utf-8:Jones;Andrea;;;
+FN;CHARSET=utf-8:Andrea Jones
+EMAIL;INTERNET:jonesa7431@creativechannel.com
+TEL:(603) 573-0551
+TITLE;CHARSET=utf-8:Retail Sales Representative
+ORG;CHARSET=utf-8:Midea
+PHOTO;VALUE=uri:http://drupal-dev.eba-fkhp4mkr.us-east-1.elasticbeanstalk
+ .com/sites/default/files/styles/profile_picture/public/2021-02/XzAyMjMyMD
+ AuanBn.jpg?h=a7758095&itok=JzVojWkV:
+URL:http://contap.co/market/9d51031f-5d31-4acc-88d8-9c8a572d3149
+END:VCARD

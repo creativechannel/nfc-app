@@ -3,15 +3,15 @@ import { navigate } from "gatsby"
 import moment from "moment"
 import { Col, Row } from "react-bootstrap"
 import { MdGetApp } from "@react-icons/all-files/md/MdGetApp"
-import { MdClose } from "@react-icons/all-files/md/MdClose"
+// import { MdClose } from "@react-icons/all-files/md/MdClose"
 
 const provideButton = (_) => {
-  const dismissed = localStorage.getItem("pwa_dismissal")
+  const dismissed = typeof window !== `undefined` ? localStorage.getItem("pwa_dismissal") : null
   return !dismissed || dismissed < moment()
 }
 
 const PWAInstall = (props) => {
-  const { suspend, acceptedUri, dismissedUri, children, ...other } = props
+  const { suspend, acceptedUri, dismissedUri } = props
 
   const [showButton, setShowButton] = useState(provideButton)
   const [prompt, setPrompt] = useState(null)
@@ -42,7 +42,7 @@ const PWAInstall = (props) => {
       if (result.outcome === "accepted")
         if (acceptedUri) navigate(acceptedUri)
 
-      if (result.outcome === "dismissed") {
+      if (result.outcome === "dismissed" && typeof window !== `undefined`) {
         localStorage.setItem(
           "pwa_dismissal",
           moment().add(suspend || 2, "days")
@@ -58,9 +58,7 @@ const PWAInstall = (props) => {
         <Row className={"add-to-home-banner"} onClick={handle_prompt}>
           <Col xs={10} className={"d-flex align-items-center justify-content-center pr-0 pl-5"}>
             <div className="add-to-home-text mr-3">
-              <a>
-                {"Add to Home Screen"}
-              </a>
+              {"Add to Home Screen"}
             </div>
             <MdGetApp/>
           </Col>
